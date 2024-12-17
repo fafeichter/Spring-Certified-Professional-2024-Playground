@@ -66,6 +66,17 @@ public class DemoApplication {
     }
 
     @Component
+    public class PersonInject2 {
+
+        private IAnimal dog;
+
+        @Inject
+        public void setDog(IAnimal dog) {
+            this.dog = dog;
+        }
+    }
+
+    @Component
     public class PersonResource {
         @Resource
         private IAnimal dog;
