@@ -1,5 +1,5 @@
 # Spring-Certified-Professional-2024-Playground
 
-Playground for
-the [Spring Certified Professional 2024 [v2]](https://www.broadcom.com/support/education/vmware/certification/spring-certified-pro)
+My personal playground for
+the [Spring Certified Professional 2024 (2V0–72.22)](https://www.broadcom.com/support/education/vmware/certification/spring-certified-pro)
 exam.
