@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.TaskConfig.Task;
 import jakarta.annotation.Resource;
 import jakarta.inject.Inject;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -9,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Profile;
@@ -22,8 +24,11 @@ public class DemoApplication {
 
     private Bar foo3;
 
-    public DemoApplication(Bar foo3) {
+    public DemoApplication(Bar foo3, Task task, ApplicationContext applicationContext) {
         this.foo3 = foo3;
+        LOG.info("Task: " + task);
+        LOG.info("Task: " + applicationContext.getBean(Task.class));
+        LOG.info("Task: " + applicationContext.getBean(Task.class));
     }
 
     @Bean
