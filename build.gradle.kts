@@ -23,6 +23,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.aspectj:aspectjrt")
     implementation("org.aspectj:aspectjweaver")
+    implementation("jakarta.inject:jakarta.inject-api")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
