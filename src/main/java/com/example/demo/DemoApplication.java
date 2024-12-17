@@ -4,20 +4,33 @@ import jakarta.annotation.Resource;
 import jakarta.inject.Inject;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
 public class DemoApplication {
 
+    Logger LOG = LoggerFactory.getLogger(DemoApplication.class);
+
     private Bar foo3;
 
     public DemoApplication(Bar foo3) {
         this.foo3 = foo3;
+    }
+
+    @Bean
+    @Profile({"p1", "!p2"})
+    public String foo() {
+        LOG.info("I am foo.");
+        return "foo";
     }
 
     public static void main(String[] args) {
