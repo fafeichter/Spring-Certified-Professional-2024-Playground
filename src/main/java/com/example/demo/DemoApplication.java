@@ -4,6 +4,7 @@ import jakarta.annotation.Resource;
 import jakarta.inject.Inject;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -37,22 +38,26 @@ public class DemoApplication {
 
     @Component
     public class Person {
+        @Autowired
+        private IAnimal dog;
+    }
 
+    @Component
+    public class PersonInject {
         @Inject
         private IAnimal dog;
 
-        public Person(IAnimal dog) {
+        public PersonInject(IAnimal dog) {
             this.dog = dog;
         }
     }
 
     @Component
-    public class Person2 {
-
+    public class PersonResource {
         @Resource
         private IAnimal dog;
 
-        public Person2(IAnimal dog) {
+        public PersonResource(IAnimal dog) {
             this.dog = dog;
         }
     }
