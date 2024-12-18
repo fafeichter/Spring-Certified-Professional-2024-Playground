@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
     <option name="ACTIVE_PROFILES" value="p2" />
-    <module name="demo.main" />
+    <module name="Spring-Certified-Professional-2024-Playground.main" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
     <extension name="coverage">
       <pattern>
